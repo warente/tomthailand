@@ -11,7 +11,7 @@ interface GradientTextProps {
     | string;         // custom CSS gradient string
   className?: string;
   style?: React.CSSProperties;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 }
 
 const PRESETS: Record<string, string> = {
