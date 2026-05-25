@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #ccff00;
+  --color-neon-pink: #ff00ff;
+  --color-neon-cyan: #00ffff;
+  --color-surface: #050d1a;
+  --color-surface-card: #0a1628;
+  --color-surface-container: #0f1e35;
+
+  --shadow-neon-cyan: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  --shadow-neon-pink: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  --shadow-neon-primary: 0 0 10px #ccff00, 0 0 20px #ccff00;
+  --shadow-neon-purple: 0 0 10px #a855f7, 0 0 20px #a855f7;
+
+  --font-sans: var(--font-prompt), var(--font-plus-jakarta), sans-serif;
+  --font-display: var(--font-orbitron), sans-serif;
+  --font-thai: var(--font-prompt), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-display {
+  font-family: var(--font-orbitron), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-thai {
+  font-family: var(--font-prompt), sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-gradient-cyan {
+  background: linear-gradient(45deg, #00ffff, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-pink {
+  background: linear-gradient(45deg, #ff00ff, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-ticket {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+}
+
+.ticket-shape {
+  mask-image:
+    radial-gradient(circle at top left, transparent 15px, black 16px),
+    radial-gradient(circle at top right, transparent 15px, black 16px),
+    radial-gradient(circle at bottom right, transparent 15px, black 16px),
+    radial-gradient(circle at bottom left, transparent 15px, black 16px);
+  mask-position: top left, top right, bottom right, bottom left;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+}
+
+.bg-circuit {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/G%3E%3C/svg%3E");
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* ============================
+   NEON BORDER SYSTEM
+   ============================
+   ใช้งาน: <NeonBorder variant="..." color="..." />
+   หรือ class ตรงๆ บน element ก็ได้
+*/
+
+/* Pulse animation สำหรับ variant="pulse" */
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+/* Rainbow animation สำหรับ variant="rainbow" */
+@keyframes neon-rainbow {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Scan-line sweep สำหรับ variant="scan" */
+@keyframes neon-scan {
+  0%   { background-position: 0% -100%; }
+  100% { background-position: 0% 200%; }
+}
+
+.neon-pulse-anim  { animation: neon-pulse  2s ease-in-out infinite; }
+
+/* Rainbow border via ::before — animation อยู่แค่ border ไม่กระทบ children */
+.neon-rainbow-border {
+  position: relative;
+  isolation: isolate;
+}
+.neon-rainbow-border::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00ffff, #ff00ff, #ccff00, #cc44ff, #00ffff);
+  z-index: -1;
+  animation: neon-rainbow 4s linear infinite;
 }
