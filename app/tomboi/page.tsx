@@ -31,7 +31,7 @@ export default function TomboiPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] min-h-[560px] overflow-hidden flex items-center">
+        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
           <Image
             src="/img/hero/hero-tombi.png"
             alt="Tomboi Creator Platform"
@@ -42,7 +42,7 @@ export default function TomboiPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
             <div className="max-w-lg text-left">
               <p className="text-sm font-bold text-pink-400 tracking-widest uppercase mb-4">Tomboi Creator Platform</p>
               <h1

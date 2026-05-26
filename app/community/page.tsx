@@ -11,7 +11,7 @@ export default function CommunityPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] pt-24 pb-20 overflow-hidden">
+        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
           <Image
             src="/img/hero/hero-commu.png"
             alt="Community Hero"
@@ -22,7 +22,7 @@ export default function CommunityPage() {
           <div className="absolute inset-0 bg-gradient-to-l from-[#050d1a] via-[#050d1a]/70 to-[#050d1a]/10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex justify-end w-full">
             <div className="text-left max-w-lg">
               <p className="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-4">The Community</p>
               <h1

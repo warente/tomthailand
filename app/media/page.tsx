@@ -9,7 +9,7 @@ export default function MediaPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] pt-24 pb-16 overflow-hidden">
+        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
           <Image
             src="/img/hero/hero-media.png"
             alt="TOM Media"
@@ -19,19 +19,19 @@ export default function MediaPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-[#050d1a]/60 to-[#050d1a]/20" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
-          <div className="relative w-full px-8 sm:px-12 lg:px-20 py-4 flex justify-start">
-            <div className="max-w-lg text-left">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+            <div className="max-w-xl">
               <p className="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-4">TOM Media</p>
               <h1
-                className="text-4xl md:text-6xl font-black text-white mb-5"
-                style={{ fontFamily: "var(--font-orbitron), sans-serif", lineHeight: 1.05 }}
+                className="font-extrabold tracking-tight text-white"
+                style={{ fontFamily: "var(--font-orbitron), sans-serif", lineHeight: 1.05, fontSize: "clamp(2rem, 9vw, 4.5rem)" }}
               >
-                Stories Worth<br />
+                Stories<br />
                 <span style={{ background: "linear-gradient(90deg,#ff00ff,#cc44ff,#00ffff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  Reading.
+                  Worth Reading.
                 </span>
               </h1>
-              <p className="text-white/50 text-lg">
+              <p className="mt-6 text-base text-white/70 max-w-md">
                 Interviews, style guides, culture, and community stories — all made for Tom & Dee Lifestyle.
               </p>
             </div>
