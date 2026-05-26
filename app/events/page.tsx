@@ -84,7 +84,7 @@ export default function EventsPage() {
                   style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
                 >
                   {/* Image */}
-                  <div className="relative w-full h-52">
+                  <div className="relative w-full aspect-[5/3]">
                     <Image
                       src={e.img}
                       alt={e.title}
