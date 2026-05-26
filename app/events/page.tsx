@@ -77,28 +77,26 @@ export default function EventsPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventTypes.map((e) => (
+              {eventTypes.map((e, i) => (
                 <div
                   key={e.title}
-                  className="rounded-2xl overflow-hidden bg-white hover:-translate-y-1 transition-transform duration-200"
-                  style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
+                  className="card-in card-scan group rounded-2xl overflow-hidden bg-white hover:-translate-y-2 transition-all duration-300"
+                  style={{
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                    animationDelay: `${i * 0.1}s`,
+                  }}
                 >
                   {/* Image */}
-                  <div className="relative w-full aspect-[5/3]">
+                  <div className="relative w-full aspect-[5/3] overflow-hidden">
                     <Image
                       src={e.img}
                       alt={e.title}
                       fill
-                      className="object-cover object-center"
+                      className="object-cover object-center scale-100 group-hover:scale-110 transition-transform duration-500 ease-out"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    {/* Icon badge */}
-                    <div
-                      className="absolute top-3 left-3 w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm"
-                      style={{ background: "linear-gradient(135deg,#ff00ff,#cc44ff,#00ffff)" }}
-                    >
-                      <e.Icon size={20} color="#ffffff" strokeWidth={2.5} />
-                    </div>
+                    {/* Hover glow overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#cc44ff30] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   {/* Text */}
                   <div className="p-6">
@@ -124,8 +122,14 @@ export default function EventsPage() {
             <div className="text-center mb-14">
               <p className="text-sm font-bold text-pink-500 tracking-widest uppercase mb-3">Locations</p>
               <h2
-                className="text-3xl md:text-4xl font-extrabold text-gray-900"
-                style={{ fontFamily: "var(--font-orbitron), sans-serif" }}
+                className="text-3xl md:text-4xl font-extrabold"
+                style={{
+                  fontFamily: "var(--font-orbitron), sans-serif",
+                  background: "linear-gradient(90deg,#ff00ff,#cc44ff,#00ffff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
               >
                 08 Cities · Coming 2026
               </h2>
@@ -152,6 +156,7 @@ export default function EventsPage() {
                   <div
                     key={city.name}
                     className="flex items-center gap-4 bg-white rounded-2xl px-5 py-4"
+                    style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
                   >
                     {/* Color pin */}
                     <div className="relative flex-shrink-0">

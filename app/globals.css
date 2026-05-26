@@ -95,6 +95,35 @@
 
 .neon-pulse-anim  { animation: neon-pulse  2s ease-in-out infinite; }
 
+/* Card entrance: fade + slide up */
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-in {
+  opacity: 0;
+  animation: card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Neon scan sweep on hover */
+.card-scan {
+  position: relative;
+  overflow: hidden;
+}
+.card-scan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, #cc44ff18 50%, transparent 100%);
+  transform: translateY(-100%);
+  transition: transform 0s;
+  pointer-events: none;
+}
+.card-scan:hover::after {
+  transform: translateY(100%);
+  transition: transform 0.6s ease-in-out;
+}
+
 /* Rainbow border via ::before — animation อยู่แค่ border ไม่กระทบ children */
 .neon-rainbow-border {
   position: relative;
