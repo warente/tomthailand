@@ -6,12 +6,12 @@ import { Users, PartyPopper, Camera, Sparkles, GraduationCap, Trophy } from "luc
 import GradientText from "../components/GradientText";
 
 const eventTypes = [
-  { Icon: Users,         title: "Meetup",               desc: "Connect with Community members in casual settings across the country.",              img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" },
-  { Icon: PartyPopper,   title: "Party Night",           desc: "A special party that brings Tom & Dee from all over Thailand together in one night.", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" },
-  { Icon: Camera,        title: "Creator Meet & Greet",  desc: "Meet your favorite Creators face-to-face at an exclusive in-person event.",          img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" },
-  { Icon: Sparkles,      title: "Fashion Night",         desc: "Show off your Tom style at an incredibly cool fashion show event.",                   img: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" },
-  { Icon: GraduationCap, title: "Campus Event",          desc: "On-campus activities at universities nationwide, made for student Toms.",             img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" },
-  { Icon: Trophy,        title: "Contest Final Night",   desc: "The grand finale of Thailand Tom Awards — the biggest night of the year.",            img: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=80" },
+  { Icon: Users,         title: "Meetup",               desc: "Connect with Community members in casual settings across the country.",              img: "/img/Meetup.png" },
+  { Icon: PartyPopper,   title: "Party Night",           desc: "A special party that brings Tom & Dee from all over Thailand together in one night.", img: "/img/Party%20Night.png" },
+  { Icon: Camera,        title: "Creator Meet & Greet",  desc: "Meet your favorite Creators face-to-face at an exclusive in-person event.",          img: "/img/Creator%20Meet%20%26%20Greet.png" },
+  { Icon: Sparkles,      title: "Fashion Night",         desc: "Show off your Tom style at an incredibly cool fashion show event.",                   img: "/img/Fashion%20Night.png" },
+  { Icon: GraduationCap, title: "Campus Event",          desc: "On-campus activities at universities nationwide, made for student Toms.",             img: "/img/Campus%20Event.png" },
+  { Icon: Trophy,        title: "Contest Final Night",   desc: "The grand finale of Thailand Tom Awards — the biggest night of the year.",            img: "/img/Contest%20Final%20Night.png" },
 ];
 
 const cities = [
