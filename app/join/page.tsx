@@ -1,9 +1,76 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Users, Star, Trophy, Handshake } from "lucide-react";
+import { Users, Star, Trophy, Handshake, ChevronDown, Check } from "lucide-react";
+
+function CustomSelect({ options, placeholder, color }: { options: string[]; placeholder: string; color: string }) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative w-full">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full px-4 py-3 rounded-xl text-sm text-left flex items-center justify-between transition-all duration-200"
+        style={{
+          border: `2px solid ${open ? color : "#e5e7eb"}`,
+          background: "#fff",
+          color: selected ? "#111" : "#9ca3af",
+          boxShadow: open ? `0 0 12px ${color}40` : "none",
+        }}
+      >
+        <span>{selected || placeholder}</span>
+        <ChevronDown
+          size={16}
+          className="flex-shrink-0 transition-transform duration-200"
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", color }}
+        />
+      </button>
+
+      {open && (
+        <div
+          className="absolute z-50 w-full mt-1 rounded-xl overflow-hidden"
+          style={{
+            background: "#ffffff",
+            border: "1.5px solid #e5e7eb",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+          }}
+        >
+          {options.map((opt) => (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => { setSelected(opt); setOpen(false); }}
+              className="w-full px-4 py-2.5 text-left text-sm flex items-center justify-between transition-colors duration-150"
+              style={{
+                color: selected === opt ? color : "#374151",
+                background: selected === opt ? `${color}10` : "transparent",
+                fontWeight: selected === opt ? 700 : 400,
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "#f9fafb"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = selected === opt ? `${color}10` : "transparent"; }}
+            >
+              <span>{opt}</span>
+              {selected === opt && <Check size={13} style={{ color }} />}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 type FormType = "community" | "creator" | "contest" | "partner";
 
@@ -41,13 +108,13 @@ export default function JoinPage() {
               className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-orbitron), sans-serif" }}
             >
-              เข้าร่วม<br />
+              Join<br />
               <span style={{ background: "linear-gradient(90deg,#00ffff,#cc44ff,#ff00ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 TOM Thailand
               </span>
             </h1>
             <p className="text-lg text-white/60 max-w-xl mx-auto">
-              เลือกวิธีที่คุณอยากมีส่วนร่วม — ไม่ว่าจะเป็น สมาชิก Creator หรือ Partner
+              Choose how you want to be part of us — as a Member, Creator, or Partner
             </p>
           </div>
         </section>
@@ -74,12 +141,12 @@ export default function JoinPage() {
                     <tab.Icon
                       size={24}
                       strokeWidth={2.5}
-                      style={{ color: active === tab.key ? tab.color : "#aaa" }}
+                      style={{ color: active === tab.key ? "#111111" : "#aaa" }}
                     />
                   </div>
                   <p
                     className="text-xs font-black uppercase tracking-wide leading-tight"
-                    style={{ color: active === tab.key ? tab.color : "#999" }}
+                    style={{ color: active === tab.key ? "#111111" : "#999" }}
                   >
                     {tab.label}
                   </p>
@@ -220,18 +287,11 @@ export default function JoinPage() {
                         <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">
                           ประเภทความร่วมมือ
                         </label>
-                        <select
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-600 text-sm focus:outline-none transition-all duration-200 bg-white"
-                          onFocus={(e) => { e.currentTarget.style.borderColor = activeTab.color; }}
-                          onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e7eb"; }}
-                        >
-                          <option>เลือกประเภท</option>
-                          <option>Sponsor / Event</option>
-                          <option>Brand Partnership</option>
-                          <option>Creator Collaboration</option>
-                          <option>Media Partnership</option>
-                          <option>อื่นๆ</option>
-                        </select>
+                        <CustomSelect
+                          color={activeTab.color}
+                          placeholder="Select Type"
+                          options={["Sponsor / Event", "Brand Partnership", "Creator Collaboration", "Media Partnership", "Other"]}
+                        />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">
@@ -253,20 +313,11 @@ export default function JoinPage() {
                     <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">
                       จังหวัด
                     </label>
-                    <select
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-600 text-sm focus:outline-none transition-all duration-200 bg-white"
-                      onFocus={(e) => { e.currentTarget.style.borderColor = activeTab.color; }}
-                      onBlur={(e) => { e.currentTarget.style.borderColor = "#e5e7eb"; }}
-                    >
-                      <option>เลือกจังหวัด</option>
-                      <option>กรุงเทพมหานคร</option>
-                      <option>เชียงใหม่</option>
-                      <option>ขอนแก่น</option>
-                      <option>ภูเก็ต</option>
-                      <option>นครราชสีมา</option>
-                      <option>สงขลา / หาดใหญ่</option>
-                      <option>อื่นๆ</option>
-                    </select>
+                    <CustomSelect
+                      color={activeTab.color}
+                      placeholder="Select Province"
+                      options={["Bangkok", "Chiang Mai", "Khon Kaen", "Phuket", "Nakhon Ratchasima", "Songkhla / Hat Yai", "Other"]}
+                    />
                   </div>
 
                   <button
@@ -276,14 +327,14 @@ export default function JoinPage() {
                       background: activeTab.color === "#ccff00"
                         ? "#ccff00"
                         : `linear-gradient(90deg, ${activeTab.color}, ${activeTab.color}cc)`,
-                      color: activeTab.color === "#ccff00" ? "#111" : "#fff",
+                      color: "#111111",
                       boxShadow: `0 0 20px ${activeTab.color}60`,
                     }}
                   >
                     {active === "community" && "Join Community"}
                     {active === "creator" && "Apply as Creator"}
                     {active === "contest" && "Join Waitlist"}
-                    {active === "partner" && "ส่งข้อมูล"}
+                    {active === "partner" && "Submit"}
                   </button>
 
                   <p className="text-xs text-gray-400 text-center">
