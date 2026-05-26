@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { UserRound } from "lucide-react";
 
 const categories = [
   { label: "All",                filter: null },
@@ -25,7 +24,7 @@ const feedPosts = [
     tagColor: "#00ffff",
     img: "/img/feed/1.png",
     author: "Jin",
-    avatar: "#00ffff",
+    avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80",
     time: "2h ago",
     caption: "How to find your own Tom style — it all starts with knowing yourself. Take your time and keep exploring! 🌟",
     hashtags: "#TomStyle #Lifestyle #BYourself",
@@ -38,7 +37,7 @@ const feedPosts = [
     tagColor: "#ff00ff",
     img: "/img/feed/images.jpeg",
     author: "Ryo",
-    avatar: "#ff00ff",
+    avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80&q=80",
     time: "5h ago",
     caption: "Tom streetwear that works for every occasion — from casual to party-ready, all within a budget 🔥",
     hashtags: "#TomFashion #Streetwear #OOTD",
@@ -51,7 +50,7 @@ const feedPosts = [
     tagColor: "#cc44ff",
     img: "/img/feed/images2.jpeg",
     author: "Meen",
-    avatar: "#cc44ff",
+    avatar: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&q=80",
     time: "1d ago",
     caption: "The day I came out to my family — sharing my real story to encourage anyone going through the same thing 💜",
     hashtags: "#ComingOut #Pride #TomThailand",
@@ -64,7 +63,7 @@ const feedPosts = [
     tagColor: "#00ffff",
     img: "/img/feed/images3.jpeg",
     author: "Nana",
-    avatar: "#00ffff",
+    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&q=80",
     time: "3h ago",
     caption: "5 timeless Tom haircuts that never go out of style — works for both short and longer hair ✂️",
     hashtags: "#TomHair #HairStyle #TomLook",
@@ -77,7 +76,7 @@ const feedPosts = [
     tagColor: "#cc44ff",
     img: "/img/feed/images4.jpeg",
     author: "Pim",
-    avatar: "#cc44ff",
+    avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=80&q=80",
     time: "8h ago",
     caption: "How did Tom-Dee couples survive long distance? Sharing real experiences from the community 💌",
     hashtags: "#LoveStory #TomDee #Relationship",
@@ -90,7 +89,7 @@ const feedPosts = [
     tagColor: "#ccff00",
     img: "/img/feed/tom2.jpeg",
     author: "Karn",
-    avatar: "#ccff00",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&q=80",
     time: "6h ago",
     caption: "A rainy night playlist for the single ones 🎧 — 30 songs every Tom has definitely listened to",
     hashtags: "#TomPlaylist #Music #Vibes",
@@ -103,7 +102,7 @@ const feedPosts = [
     tagColor: "#ff00ff",
     img: "/img/feed/tom3.jpeg",
     author: "Pop",
-    avatar: "#ff00ff",
+    avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&q=80",
     time: "1d ago",
     caption: "Tom Fashion Week BKK 2025 recap ❤️‍🔥 — highlights from every look worth watching on the runway",
     hashtags: "#FashionWeek #TomFashion #BKK",
@@ -116,7 +115,7 @@ const feedPosts = [
     tagColor: "#00ffff",
     img: "/img/feed/tom4.jpeg",
     author: "Beam",
-    avatar: "#00ffff",
+    avatar: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=80&q=80",
     time: "2d ago",
     caption: "3 days 2 nights in Chiang Mai with my partner on a 3,000 THB budget — is it actually doable? 🏔️",
     hashtags: "#TomTravel #ChiangMai #TravelThai",
@@ -129,7 +128,7 @@ const feedPosts = [
     tagColor: "#ff00ff",
     img: "/img/feed/tom5.jpeg",
     author: "Fah",
-    avatar: "#ff00ff",
+    avatar: "https://images.unsplash.com/photo-1515077678510-ce3bdf418862?w=80&q=80",
     time: "4h ago",
     caption: "How the LGBTQ+ Club at my university changed my life — a first-year student's honest experience 🏫",
     hashtags: "#CampusLife #University #Pride",
@@ -142,7 +141,7 @@ const feedPosts = [
     tagColor: "#00ffff",
     img: "/img/feed/tom6.jpeg",
     author: "Lek",
-    avatar: "#00ffff",
+    avatar: "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?w=80&q=80",
     time: "12h ago",
     caption: "Morning routine for office Toms — 5 things to start your day feeling energized and confident ☀️",
     hashtags: "#MorningRoutine #TomLife #SelfCare",
@@ -155,7 +154,7 @@ const feedPosts = [
     tagColor: "#ff00ff",
     img: "/img/feed/tom7.jpeg",
     author: "Mint",
-    avatar: "#ff00ff",
+    avatar: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=80&q=80",
     time: "3d ago",
     caption: "TOM Pride Bangkok 2025 recap — the biggest community event of the year and it did not disappoint 🏳️‍🌈",
     hashtags: "#TOMPride #Pride2025 #Bangkok",
@@ -168,7 +167,7 @@ const feedPosts = [
     tagColor: "#ccff00",
     img: "/img/feed/1.png",
     author: "Wan",
-    avatar: "#ccff00",
+    avatar: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=80&q=80",
     time: "5h ago",
     caption: "Mental health tips for Toms who are still figuring out their identity — you are not alone 🌿",
     hashtags: "#MentalHealth #SelfLove #TomCommunity",
@@ -351,14 +350,14 @@ export default function CommunityFeed() {
               {/* Info */}
               <div className="p-3">
                 <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="w-7 h-7 rounded-full flex-shrink-0 overflow-hidden flex items-center justify-center"
-                    style={{
-                      background: `linear-gradient(135deg, ${post.avatar}33, ${post.avatar}99)`,
-                      border: `1.5px solid ${post.avatar}`,
-                    }}
-                  >
-                    <UserRound size={14} style={{ color: post.avatar }} strokeWidth={2} />
+                  <div className="w-7 h-7 rounded-full flex-shrink-0 overflow-hidden">
+                    <Image
+                      src={post.avatar}
+                      alt={post.author}
+                      width={28}
+                      height={28}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <span className="text-xs font-bold text-gray-900 truncate flex-1">{post.author}</span>
                   <span className="text-[10px] text-gray-400 flex-shrink-0">{post.time}</span>
