@@ -36,7 +36,7 @@ export default function TomboiPage() {
             src="/img/hero/hero-tombi.png"
             alt="Tomboi Creator Platform"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[70%_center]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/80 to-transparent" />
