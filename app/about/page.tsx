@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import NeonBorder from "../components/NeonBorder";
 import { ShieldCheck, Sparkles, MapPin, Network, Heart, BanIcon, Lock, FileCheck, ShoppingBagIcon, Flag } from "lucide-react";
 import GradientText from "../components/GradientText";
 
@@ -11,28 +10,28 @@ const whyItems = [
     Icon: ShieldCheck,
     title: "Safe & Inclusive",
     desc: "A space where everyone can be themselves without judgment — friendly, welcoming, and completely toxic-free.",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80",
+    img: "/img/Safe%20%26%20Inclusive.png",
     color: "#00ffff",
   },
   {
     Icon: Sparkles,
     title: "Curated for Quality",
     desc: "A platform that values quality over quantity — every Creator, Content, and Event is carefully selected.",
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+    img: "/img/Curated%20for%20Quality.png",
     color: "#ff00ff",
   },
   {
     Icon: MapPin,
     title: "Made for Thailand",
     desc: "Built by Thais, for the Tom Community in Thailand — we truly understand the culture and context.",
-    img: "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=600&q=80",
+    img: "/img/Made%20for%20Thailand.png",
     color: "#ccff00",
   },
   {
     Icon: Network,
     title: "Growing Ecosystem",
     desc: "Connecting Community, Creator Platform, Contests, and Events all in one place.",
-    img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
+    img: "/img/Growing%20Ecosystem.png",
     color: "#cc44ff",
   },
 ];
@@ -88,9 +87,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
               {/* Vision */}
-              <NeonBorder variant="rainbow" className="overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+              <div className="rounded-2xl overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 {/* Image */}
-                <div className="relative w-full h-52">
+                <div className="relative w-full aspect-[5/3]">
                   <Image src="/img/ourvision.png" alt="Our Vision" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
                   {/* Badge */}
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full backdrop-blur-sm" style={{ background: "linear-gradient(135deg,#ff00ff,#cc44ff,#00ffff)" }}>
@@ -106,12 +105,12 @@ export default function AboutPage() {
                     Building a modern, credible, and beautiful hub that represents the Tom Community in Thailand — where everyone can be themselves with pride.
                   </p>
                 </div>
-              </NeonBorder>
+              </div>
 
               {/* Mission */}
-              <NeonBorder variant="rainbow" className="overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+              <div className="rounded-2xl overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 {/* Image */}
-                <div className="relative w-full h-52">
+                <div className="relative w-full aspect-[5/3]">
                   <Image src="/img/ourmission.png" alt="Our Mission" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
                   {/* Badge */}
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full backdrop-blur-sm" style={{ background: "linear-gradient(135deg,#ff00ff,#cc44ff,#00ffff)" }}>
@@ -127,7 +126,7 @@ export default function AboutPage() {
                     Bringing together Community members, Creators, Brand Partners, and Event Organizers to build a powerful new ecosystem for Tom Culture in Thailand.
                   </p>
                 </div>
-              </NeonBorder>
+              </div>
 
             </div>
           </div>
@@ -153,7 +152,7 @@ export default function AboutPage() {
                   style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
                 >
                   {/* Image */}
-                  <div className="relative w-full h-52 overflow-hidden">
+                  <div className="relative w-full aspect-[5/3] overflow-hidden">
                     <Image
                       src={item.img}
                       alt={item.title}
