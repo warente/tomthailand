@@ -173,7 +173,7 @@ export default function AboutPage() {
                     <GradientText
                       as="h3"
                       gradient="pink-purple"
-                      className="text-lg font-bold mb-2"
+                      className="text-lg font-black mb-2"
                       style={{ fontFamily: "var(--font-orbitron), sans-serif" }}
                     >
                       {item.title}

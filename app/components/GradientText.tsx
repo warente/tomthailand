@@ -5,6 +5,7 @@ interface GradientTextProps {
   /** gradient preset หรือใส่ gradient string เองได้เลย */
   gradient?:
     | "pink-purple"   // #ff00ff → #cc44ff → #9900ff  (default)
+    | "neon"          // #ff00ff → #cc44ff → #00ffff  (pink → purple → cyan)
     | "cyan-blue"     // #00ffff → #4499ff
     | "lime-cyan"     // #ccff00 → #00ffff
     | "rainbow"       // #00ffff → #ff00ff → #ccff00
@@ -16,6 +17,7 @@ interface GradientTextProps {
 
 const PRESETS: Record<string, string> = {
   "pink-purple": "linear-gradient(90deg, #ff00ff, #cc44ff, #9900ff)",
+  "neon":        "linear-gradient(90deg, #ff00ff, #cc44ff, #00ffff)",
   "cyan-blue":   "linear-gradient(90deg, #00ffff, #4499ff)",
   "lime-cyan":   "linear-gradient(90deg, #ccff00, #00ffff)",
   "rainbow":     "linear-gradient(90deg, #00ffff, #ff00ff, #ccff00)",
@@ -57,6 +59,7 @@ export default function GradientText({
   <GradientText>Personal Profile</GradientText>
 
   // Preset อื่น
+  <GradientText gradient="neon">Event Types</GradientText>
   <GradientText gradient="cyan-blue">Community</GradientText>
   <GradientText gradient="lime-cyan">Events</GradientText>
   <GradientText gradient="rainbow">TOM Thailand</GradientText>

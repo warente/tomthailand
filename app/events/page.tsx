@@ -121,18 +121,14 @@ export default function EventsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className="text-sm font-bold text-pink-500 tracking-widest uppercase mb-3">Locations</p>
-              <h2
+              <GradientText
+                as="h2"
+                gradient="neon"
                 className="text-3xl md:text-4xl font-extrabold"
-                style={{
-                  fontFamily: "var(--font-orbitron), sans-serif",
-                  background: "linear-gradient(90deg,#ff00ff,#cc44ff,#00ffff)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ fontFamily: "var(--font-orbitron), sans-serif" }}
               >
                 08 Cities · Coming 2026
-              </h2>
+              </GradientText>
             </div>
 
             <div className="flex flex-col lg:flex-row gap-10 items-center">
