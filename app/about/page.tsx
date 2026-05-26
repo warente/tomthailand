@@ -91,7 +91,7 @@ export default function AboutPage() {
               <NeonBorder variant="rainbow" className="overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 {/* Image */}
                 <div className="relative w-full h-52">
-                  <Image src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=800&q=80" alt="Our Vision" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src="/img/ourvision.png" alt="Our Vision" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
                   {/* Badge */}
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full backdrop-blur-sm" style={{ background: "linear-gradient(135deg,#ff00ff,#cc44ff,#00ffff)" }}>
                     <span className="text-xs font-black text-white tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron), sans-serif" }}>Our Vision</span>
@@ -112,7 +112,7 @@ export default function AboutPage() {
               <NeonBorder variant="rainbow" className="overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
                 {/* Image */}
                 <div className="relative w-full h-52">
-                  <Image src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80" alt="Our Mission" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src="/img/ourmission.png" alt="Our Mission" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
                   {/* Badge */}
                   <div className="absolute top-3 left-3 px-3 py-1 rounded-full backdrop-blur-sm" style={{ background: "linear-gradient(135deg,#ff00ff,#cc44ff,#00ffff)" }}>
                     <span className="text-xs font-black text-white tracking-widest uppercase" style={{ fontFamily: "var(--font-orbitron), sans-serif" }}>Our Mission</span>
