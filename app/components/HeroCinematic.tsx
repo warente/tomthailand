@@ -24,22 +24,19 @@ export default function HeroCinematic({ src, alt, children, className = "" }: He
     const onScroll = () => {
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
-        const rect = section.getBoundingClientRect();
-        const viewH = window.innerHeight;
+        const scrollY = window.scrollY;
+        const heroH = section.offsetHeight;
 
-        // Only animate while hero is visible
-        if (rect.bottom < 0 || rect.top > viewH) return;
+        // Only while hero is visible
+        if (scrollY > heroH * 1.5) return;
 
-        // progress: 0 = top of hero in view, 1 = hero scrolled out
-        const progress = Math.max(0, -rect.top / (rect.height + viewH));
+        // Parallax: image drifts up at 45% of scroll speed
+        const translateY = scrollY * 0.45;
 
-        // Parallax: image moves up slower than scroll (cinematic depth)
-        const translateY = progress * 120;
+        // Scale: zoomed in at rest (1.18), pulls back as user scrolls
+        const scale = 1.18 - (scrollY / heroH) * 0.18;
 
-        // Subtle scale: start 1.08, shrink to 1.0 as we scroll past
-        const scale = 1.08 - progress * 0.08;
-
-        imgWrap.style.transform = `translateY(${translateY}px) scale(${scale})`;
+        imgWrap.style.transform = `translateY(${translateY}px) scale(${Math.max(1, scale)})`;
       });
     };
 
@@ -61,7 +58,7 @@ export default function HeroCinematic({ src, alt, children, className = "" }: He
       <div
         ref={imgRef}
         className="absolute inset-0 will-change-transform"
-        style={{ transform: "translateY(0px) scale(1.08)" }}
+        style={{ transform: "translateY(0px) scale(1.18)" }}
       >
         <Image
           src={src}
