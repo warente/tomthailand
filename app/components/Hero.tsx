@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Users, User, MapPin } from "lucide-react";
+import HeroCinematic from "./HeroCinematic";
 
 const stats = [
   {
@@ -31,16 +32,11 @@ const stats = [
 
 export default function Hero() {
   return (
-    <header className="relative min-h-[680px] md:min-h-0 md:h-[700px] overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/image.png"
-        alt="TOM Thailand — K-pop tom in neon city"
-        fill
-        className="object-cover object-center"
-        priority
-      />
-
+    <HeroCinematic
+      src="/image.png"
+      alt="TOM Thailand — K-pop tom in neon city"
+      className="min-h-[680px] md:min-h-0 md:h-[700px] [&>header]:hidden"
+    >
       {/* Dark gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
@@ -103,6 +99,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </header>
+    </HeroCinematic>
   );
 }
