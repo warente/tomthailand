@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Orbitron, Prompt } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "./components/LenisProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="th" className={`${plusJakarta.variable} ${orbitron.variable} ${prompt.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-surface text-white overflow-x-hidden">
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );
