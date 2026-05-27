@@ -27,9 +27,9 @@ const awards = [
   { title: "Best Personality",    Icon: Smile,         color: "#ccff00", desc: "Unforgettable personality and undeniable aura.",        img: "/img/BEST%20PERSONALITY.png" },
   { title: "Rising Star",         Icon: TrendingUp,    color: "#cc44ff", desc: "The hottest newcomer everyone is watching.",           img: "/img/RISING%20STAR.png" },
   { title: "Creator of The Year", Icon: Trophy,        color: "#ff00ff", desc: "The Content Creator who delivered the best work.",    img: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" },
-  { title: "Campus Icon",         Icon: GraduationCap, color: "#00ffff", desc: "The Tom who defines the icon of their campus.",        img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" },
+  { title: "Campus Icon",         Icon: GraduationCap, color: "#00ffff", desc: "The Tom who defines the icon of their campus.",        img: "/img/CAMPUS%20ICON.png" },
   { title: "Community Choice",    Icon: Heart,         color: "#cc44ff", desc: "A heartfelt award chosen directly by the Community.", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" },
-  { title: "Brand Ambassador",    Icon: Gem,           color: "#ccff00", desc: "The best face for a brand partnership.",              img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" },
+  { title: "Brand Ambassador",    Icon: Gem,           color: "#ccff00", desc: "The best face for a brand partnership.",              img: "/img/BRAND%20AMBASSADOR.png" },
 ];
 
 const units = [
