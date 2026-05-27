@@ -22,10 +22,10 @@ function getTimeLeft() {
 }
 
 const awards = [
-  { title: "Popular Vote",        Icon: ThumbsUp,      color: "#00ffff", desc: "Voted by the Community across the entire country.",   img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" },
-  { title: "Best Style",          Icon: Sparkles,      color: "#ff00ff", desc: "The most outstanding and iconic dressing style.",      img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80" },
-  { title: "Best Personality",    Icon: Smile,         color: "#ccff00", desc: "Unforgettable personality and undeniable aura.",        img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" },
-  { title: "Rising Star",         Icon: TrendingUp,    color: "#cc44ff", desc: "The hottest newcomer everyone is watching.",           img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&q=80" },
+  { title: "Popular Vote",        Icon: ThumbsUp,      color: "#00ffff", desc: "Voted by the Community across the entire country.",   img: "/img/POPULAR%20VOTE.png" },
+  { title: "Best Style",          Icon: Sparkles,      color: "#ff00ff", desc: "The most outstanding and iconic dressing style.",      img: "/img/BEST%20STYLE.png" },
+  { title: "Best Personality",    Icon: Smile,         color: "#ccff00", desc: "Unforgettable personality and undeniable aura.",        img: "/img/BEST%20PERSONALITY.png" },
+  { title: "Rising Star",         Icon: TrendingUp,    color: "#cc44ff", desc: "The hottest newcomer everyone is watching.",           img: "/img/RISING%20STAR.png" },
   { title: "Creator of The Year", Icon: Trophy,        color: "#ff00ff", desc: "The Content Creator who delivered the best work.",    img: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&q=80" },
   { title: "Campus Icon",         Icon: GraduationCap, color: "#00ffff", desc: "The Tom who defines the icon of their campus.",        img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" },
   { title: "Community Choice",    Icon: Heart,         color: "#cc44ff", desc: "A heartfelt award chosen directly by the Community.", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" },
