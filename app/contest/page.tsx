@@ -28,7 +28,7 @@ const awards = [
   { title: "Rising Star",         Icon: TrendingUp,    color: "#cc44ff", desc: "The hottest newcomer everyone is watching.",           img: "/img/RISING%20STAR.png" },
   { title: "Creator of The Year", Icon: Trophy,        color: "#ff00ff", desc: "The Content Creator who delivered the best work.",    img: "/img/CREATOR%20OF%20THE%20YEAR.png" },
   { title: "Campus Icon",         Icon: GraduationCap, color: "#00ffff", desc: "The Tom who defines the icon of their campus.",        img: "/img/CAMPUS%20ICON.png" },
-  { title: "Community Choice",    Icon: Heart,         color: "#cc44ff", desc: "A heartfelt award chosen directly by the Community.", img: "/img/COMMUNITY%20CHOICE.png" },
+  { title: "Community Choice",    Icon: Heart,         color: "#cc44ff", desc: "A heartfelt award chosen directly by the Community.", img: "/img/COMMUNITY-CHOICE.png" },
   { title: "Brand Ambassador",    Icon: Gem,           color: "#ccff00", desc: "The best face for a brand partnership.",              img: "/img/BRAND%20AMBASSADOR.png" },
 ];
 
