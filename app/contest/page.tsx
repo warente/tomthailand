@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThumbsUp, Sparkles, Smile, TrendingUp, Trophy, GraduationCap, Heart, Gem } from "lucide-react";
 import GradientText from "../components/GradientText";
+import HeroCinematic from "../components/HeroCinematic";
 
 const TARGET = new Date("2026-12-31T00:00:00");
 function pad(n: number) { return String(n).padStart(2, "0"); }
@@ -55,14 +56,7 @@ export default function ContestPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
-          <Image
-            src="/img/hero/hero-award.png"
-            alt="Thailand Tom Awards"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+        <HeroCinematic src="/img/hero/hero-award.png" alt="Thailand Tom Awards">
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-[#050d1a]/65 to-[#050d1a]/30" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center w-full">
@@ -132,7 +126,7 @@ export default function ContestPage() {
               </Link>
             </div>
           </div>
-        </section>
+        </HeroCinematic>
 
         {/* Award Categories */}
         <section className="py-20 bg-white">

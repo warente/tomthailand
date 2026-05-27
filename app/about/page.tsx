@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Sparkles, MapPin, Network, Heart, BanIcon, Lock, FileCheck, ShoppingBagIcon, Flag } from "lucide-react";
 import GradientText from "../components/GradientText";
+import HeroCinematic from "../components/HeroCinematic";
 
 const whyItems = [
   {
@@ -51,16 +52,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
-          {/* Background image */}
-          <Image
-            src="/img/hero/hero-about.png"
-            alt="About TOM Thailand"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          {/* Overlays */}
+        <HeroCinematic src="/img/hero/hero-about.png" alt="About TOM Thailand">
           <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/75 to-[#050d1a]/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
@@ -79,7 +71,7 @@ export default function AboutPage() {
               TOM Thailand คือศูนย์กลาง Tom & Dee Lifestyle Community ของประเทศไทย ที่เชื่อม Creator, Events และการประกวดระดับประเทศไว้ในที่เดียว
             </p>
           </div>
-        </section>
+        </HeroCinematic>
 
         {/* Vision & Mission */}
         <section className="py-20 bg-white">

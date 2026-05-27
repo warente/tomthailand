@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MediaFeed from "./MediaFeed";
 import Image from "next/image";
+import HeroCinematic from "../components/HeroCinematic";
 
 export default function MediaPage() {
   return (
@@ -9,14 +10,7 @@ export default function MediaPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
-          <Image
-            src="/img/hero/hero-media.png"
-            alt="TOM Media"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+        <HeroCinematic src="/img/hero/hero-media.png" alt="TOM Media">
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-[#050d1a]/60 to-[#050d1a]/20" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
@@ -36,7 +30,7 @@ export default function MediaPage() {
               </p>
             </div>
           </div>
-        </section>
+        </HeroCinematic>
 
         {/* Feed (client: filter + articles) */}
         <MediaFeed />

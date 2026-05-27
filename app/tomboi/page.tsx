@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { User, Users, Trophy, BadgeCheck, Camera, TrendingUp } from "lucide-react";
 import GradientText from "../components/GradientText";
+import HeroCinematic from "../components/HeroCinematic";
 
 const creators = [
   { name: "Jin",   tag: "STYLE : BANGKOK",      glowColor: "#00ffff", nameColor: "#00ffff", followers: "48.2K", src: "/img/feed/1.png"        },
@@ -31,14 +32,7 @@ export default function TomboiPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#050d1a] min-h-[520px] flex items-center overflow-hidden">
-          <Image
-            src="/img/hero/hero-tombi.png"
-            alt="Tomboi Creator Platform"
-            fill
-            className="object-cover object-[70%_center]"
-            priority
-          />
+        <HeroCinematic src="/img/hero/hero-tombi.png" alt="Tomboi Creator Platform" className="[&_img]:object-[70%_center]">
           <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a] via-[#050d1a]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-circuit opacity-10" />
@@ -68,7 +62,7 @@ export default function TomboiPage() {
               </div>
             </div>
           </div>
-        </section>
+        </HeroCinematic>
 
         {/* Creator Grid */}
         <section id="creators" className="py-20 bg-white">
