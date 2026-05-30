@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOM Thailand - Light Mode Neon Pop Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            primary: '#ccff00', // Custom neon green from design system
+            'neon-pink': '#ff00ff',
+            'neon-cyan': '#00ffff',
+            'surface': '#f9f9ff',
+            'surface-container': '#ededf4',
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 10px #00ffff, 0 0 20px #00ffff',
+            'neon-pink': '0 0 10px #ff00ff, 0 0 20px #ff00ff',
+            'neon-primary': '0 0 10px #ccff00, 0 0 20px #ccff00',
+            'neon-purple': '0 0 10px #a855f7, 0 0 20px #a855f7',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    .text-gradient-cyan {
+      background: -webkit-linear-gradient(45deg, #00ffff, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-pink {
+      background: -webkit-linear-gradient(45deg, #ff00ff, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bg-gradient-ticket {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+    }
+    .ticket-shape {
+      mask-image: radial-gradient(circle at top left, transparent 15px, black 16px),
+                  radial-gradient(circle at top right, transparent 15px, black 16px),
+                  radial-gradient(circle at bottom right, transparent 15px, black 16px),
+                  radial-gradient(circle at bottom left, transparent 15px, black 16px);
+      mask-position: top left, top right, bottom right, bottom left;
+      mask-size: 51% 51%;
+      mask-repeat: no-repeat;
+    }
+    .bg-circuit {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body class="bg-surface text-gray-900 font-sans antialiased overflow-x-hidden">
+<!-- BEGIN: Navigation -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20">
+<!-- Logo -->
+<div class="flex-shrink-0 flex items-center">
+<a class="flex items-center gap-2 text-2xl font-extrabold tracking-tighter" href="#">
+<span class="text-gradient-pink">TOM</span>
+<span class="text-gray-900 text-lg uppercase tracking-widest mt-1">Thailand</span>
+</a>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-cyan-500 font-semibold border-b-2 border-cyan-500 pb-1" href="#">HOME</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">COMMUNITY</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">TOMBOI</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">CONTEST</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">MEDIA</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">EVENTS</a>
+<a class="text-gray-700 hover:text-cyan-500 font-semibold transition-colors" href="#">ABOUT</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-4">
+<button class="p-2 text-cyan-500 hover:text-cyan-600 transition-colors bg-cyan-50 rounded-full">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<a class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-cyan-400 rounded-full shadow-sm text-sm font-bold text-cyan-500 bg-white hover:bg-cyan-50 hover:shadow-neon-cyan transition-all duration-300 uppercase tracking-wider" href="#">
+            Join
+          </a>
+</div>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<header class="relative bg-white overflow-hidden bg-circuit">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:pt-32 lg:pb-40 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Hero Content -->
+<div class="text-center lg:text-left space-y-8">
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+            The Home of<br/>
+<span class="text-gradient-cyan">Thailand's TOM</span><br/>
+            Community.
+          </h1>
+<p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
+            "Home of Thailand's TOM Community, community and enacting one of a new creators."
+          </p>
+<div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+<a class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-gray-900 bg-primary hover:bg-[#b3e600] shadow-neon-primary transition-all duration-300" href="#">
+              JOIN THE COMMUNITY
+            </a>
+<a class="inline-flex items-center justify-center px-8 py-4 border border-pink-400 text-base font-bold rounded-full text-pink-600 bg-white hover:bg-pink-50 shadow-neon-pink transition-all duration-300" href="#">
+              APPLY AS CREATOR
+            </a>
+</div>
+<!-- Stats -->
+<div class="pt-8 flex justify-center lg:justify-start gap-8 lg:gap-12 text-left">
+<div class="flex items-center gap-3">
+<div class="p-3 bg-cyan-100 rounded-xl text-cyan-500 shadow-neon-cyan">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-3xl font-black text-gray-900">10K+</p>
+<p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Community</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="p-3 bg-pink-100 rounded-xl text-pink-500 shadow-neon-pink">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-3xl font-black text-gray-900">120+</p>
+<p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Creators</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="p-3 bg-cyan-100 rounded-xl text-cyan-500 shadow-neon-cyan">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-3xl font-black text-gray-900">08</p>
+<p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Other</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Image -->
+<div class="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20">
+<img alt="K-pop styled idol in neon city" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH2k5fMq2myYmdDw_xaX7Ogh4XhAXzX7BKLx7E9oEujUI8VUEtNPSdxYBcCFBKA7mLUIEH3izPJkd7TPkV6G5ARmDsUsG3L2ZZYep6cUMR1Gexnxmm-78Xow62jwIAZDSVonMIWlX3Mzh02-UIYPTzXaT-sHKoTQ3hxuOwmpZ-W0mHMl9N9kk1INamkOY8-6ZQXcUkm_x4Fsn56RGMwLKq8x2FAz4RTGLmRcbDl4KGTkFuCIrUYd6SOddv_2So3ePo6QEUiUBIimQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- END: Hero Section -->
+<!-- BEGIN: News Ticker -->
+<div class="bg-cyan-50 border-y border-cyan-100 overflow-hidden py-3 shadow-inner">
+<div class="whitespace-nowrap flex animate-marquee space-x-8">
+<span class="text-sm font-semibold text-gray-700 flex items-center gap-4">
+<span class="font-black text-cyan-600">NEWS</span> | The faces shaping Thailand's TOM culture. Newein Tis Mavlform...
+      </span>
+<span class="text-sm font-semibold text-gray-700 flex items-center gap-4">
+<span class="font-black text-cyan-600">NEWS</span> | The faces shaping Thailand's TOM culture. Newein Tis Mavlform...
+      </span>
+<span class="text-sm font-semibold text-gray-700 flex items-center gap-4">
+<span class="font-black text-cyan-600">NEWS</span> | The faces shaping Thailand's TOM culture. Newein Tis Mavlform...
+      </span>
+</div>
+</div>
+<style data-purpose="marquee-animation">
+    .animate-marquee {
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+<!-- END: News Ticker -->
+<main>
+<!-- BEGIN: Featured Creators -->
+<section class="py-24 bg-white relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-sm font-bold text-gray-500 tracking-widest uppercase">Featured Creators</h2>
+<p class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            The faces shaping<br/>Thailand's TOM culture.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-white border-2 border-cyan-200 rounded-2xl overflow-hidden shadow-xl hover:shadow-neon-cyan transition-all duration-300 h-[300px]">
+<img alt="Jin - Style: Bangkok" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpsLjkpwBg_TTgTk7-R_nqJz_E4ZUz3Xa5c2jipcNJPjImIOF_oIBpxqSCuqxfAcLvEiquGj_1B2Pe8vlAWsl5pkCFIsXtWk5rFLeoGUSx7FySU6NAZVoY3tjahfqfnukq2DhsmKeDBxwP0Yz4KdCGWpcoUff0soiFOQe4o5BYe8AG-GN9yhfi13BrZQrnvTqKgVptOGL2Sgzocv6RBKDgMdrbOxqWr1PRF0Bn8VjX8F0BnLYnwUkqS18ObUJAwmGNtYNhgFF_Y4"/>
+</div>
+<div class="mt-4">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Style : Bangkok</p>
+<h3 class="text-2xl font-black text-gray-900">Jin</h3>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-white border-2 border-pink-200 rounded-2xl overflow-hidden shadow-xl hover:shadow-neon-pink transition-all duration-300 h-[300px]">
+<img alt="Jin - Editorial: Tokyo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANIAHVp-hgzSbV6LKvVzPwzpQ4LxinVqoQFAQptTdyNVBGc0OCIAMydTuvJD1dGCB6EKFaY3RKUlxXqk8Nl47jCoAd0miSbfa8nAACWDVmlHFEFhW_YcBsVa_J5rIaHqnMy_ythSwOhyDkQF9f4-zV21u_1tCqKF08ufO-r-21Raj3GDiiFRyWn3mXzgUcAvBhPs3ZsJUrUZGm_U8BilEUQ9lfqekIVVT4mU-ZV8ZM9sj1_aQdLBKIi_PI2MmHcHV5CCxkSYrodGQ"/>
+</div>
+<div class="mt-4">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Editorial : Tokyo</p>
+<h3 class="text-2xl font-black text-pink-600">Jin</h3>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-white border-2 border-primary rounded-2xl overflow-hidden shadow-xl hover:shadow-neon-primary transition-all duration-300 h-[300px]">
+<img alt="Ryo - Editorial: Tokyo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz6HcTVhLDu5Um_Iq9A3xJrQPTJA48CukSsu84vb2l4cNXHtZeiKgHJWrQqKPESsILhUgn6iCKwuXYWog9_UA_PydTGwzKdZpGXTBfaVMGAtOoSeMmHkPzTkprQJ5oLqdLrAox_edlSUNeTfKs7PfX7srJqYTNCi6ixmOC11KRaZLsENzrXdA7tUD2PZATurlaqjRW9-xzkBpS9uy7_LBW8Dwsb3qmho9Xbmlz1jZBOmZtLbfJaYxgbpsoN8yMg71qv8DLkjj6ifo"/>
+</div>
+<div class="mt-4">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Editorial : Tokyo</p>
+<h3 class="text-2xl font-black text-gray-900">Ryo</h3>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-purple-400 to-fuchsia-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-white border-2 border-purple-300 rounded-2xl overflow-hidden shadow-xl hover:shadow-neon-purple transition-all duration-300 h-[300px]">
+<img alt="Ryo - Editorial: Tokyo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvKdCx4crwmZSPnLrlNC2PGivicYDNckCtdcOkO_DuJUUcz2P7qzZ7-lt2Kq3CwIAWp30EG_35v5LeQ9YzVWK98IniqCRrHBC1v8g0yI0uVXG5B0iPSr8wEuYijRpJmWVkG8Cg51J-4L8aOCrjTlG7XCcLKPHfV02Fb-CqD4PE8Qjrc1nCSXAuG21agbLhtG5e5LHVHKyI3Q5xXY5nho7LcGedfA_F0o971kgnY75vGZZ9NRj1-R4rurTikuCcP_PfzehzkDrUa2Q"/>
+</div>
+<div class="mt-4">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Editorial : Tokyo</p>
+<h3 class="text-2xl font-black text-purple-600">Ryo</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Featured Creators -->
+<!-- BEGIN: The Community Section -->
+<section class="py-16 bg-surface-container relative bg-circuit">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-12 border border-gray-100">
+<div class="w-full lg:w-1/2 rounded-2xl overflow-hidden border-2 border-cyan-200 shadow-neon-cyan h-[400px]">
+<img alt="Community group photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX1Jx0fa45liYwjI-SNFOP8WRhLm3Q1BWNMxgavj8UAtTj9uWm3RkUk412VbsEfVp3j7XxDDiEuTANl63n6VAqbDeD9ZkhHwUEH6f4hA1mbnGIm5dezNhG9XbyVLzxDccdCIPAsKZTDlTtLZC2wgZayfj_CcAwkTGpDQCwLiLkxgR9Cz3fI6gUOe01JMREwtyFb7fTbTjUW6XPCuWA0fxKF20THWSyLGG_ncWZ-k1haEGFgo87iOtfzXFrWsLgDygYAQjhUclb6bA"/>
+</div>
+<div class="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+<h2 class="text-sm font-bold text-gray-500 tracking-widest uppercase">The Community</h2>
+<p class="text-3xl md:text-5xl font-black text-gray-900 leading-tight">เป็นตัวเองได้ ในที่ปลอดภัย</p>
+<div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-4">
+<span class="px-4 py-1.5 rounded-full bg-cyan-50 text-cyan-600 text-sm font-bold border border-cyan-200">Amantots</span>
+<span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold border border-blue-200">Tiago</span>
+<span class="px-4 py-1.5 rounded-full bg-pink-50 text-pink-600 text-sm font-bold border border-pink-200">Tagics</span>
+<span class="px-4 py-1.5 rounded-full bg-cyan-50 text-cyan-600 text-sm font-bold border border-cyan-200">Senitire</span>
+<span class="px-4 py-1.5 rounded-full bg-cyan-50 text-cyan-600 text-sm font-bold border border-cyan-200">Ineesmasiam</span>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-sm font-bold rounded-full text-gray-900 bg-primary hover:bg-[#b3e600] shadow-neon-primary transition-all duration-300 uppercase" href="#">
+                The Community
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: The Community Section -->
+<!-- BEGIN: TOM Awards & CTAs -->
+<section class="py-24 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+<!-- Awards Ticket -->
+<div class="bg-gradient-ticket ticket-shape p-8 md:p-12 border-2 border-cyan-500 shadow-neon-cyan flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<!-- Decorative overlay -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+<div class="flex-shrink-0 relative z-10 w-48 h-48 md:w-64 md:h-64 filter drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">
+<svg class="w-full h-full text-white" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 15 L20 40 L30 85 L70 85 L80 40 Z" fill="url(#pink-grad-fill)" stroke="url(#pink-grad)" stroke-width="2"></path>
+<path d="M50 15 L35 50 L50 70 L65 50 Z" fill="url(#cyan-grad-fill)" stroke="url(#cyan-grad)" stroke-width="2"></path>
+<defs>
+<lineargradient id="pink-grad" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff00ff"></stop>
+<stop offset="100%" stop-color="#3b82f6"></stop>
+</lineargradient>
+<lineargradient id="cyan-grad" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#00ffff"></stop>
+<stop offset="100%" stop-color="#a855f7"></stop>
+</lineargradient>
+<lineargradient id="pink-grad-fill" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff00ff" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2"></stop>
+</lineargradient>
+<lineargradient id="cyan-grad-fill" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#00ffff" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#a855f7" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex-1 w-full relative z-10 border-t md:border-t-0 md:border-l border-cyan-500/30 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-start text-center md:text-left">
+<h3 class="text-3xl md:text-4xl font-black text-white tracking-widest uppercase mb-8">
+              Thailand <span class="text-gradient-pink">TOM Awards</span>
+</h3>
+<!-- Countdown -->
+<div class="flex gap-4 md:gap-8 justify-center w-full max-w-lg">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-gray-900/50 border border-cyan-500 rounded-lg flex items-center justify-center shadow-[inset_0_0_10px_rgba(0,255,255,0.2)]">
+<span class="text-3xl md:text-4xl font-bold text-cyan-400 font-mono">122</span>
+</div>
+<span class="text-xs font-bold text-gray-400 uppercase mt-2">Days</span>
+</div>
+<div class="text-cyan-500 text-3xl font-bold self-start mt-2 md:mt-4">:</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-gray-900/50 border border-cyan-500 rounded-lg flex items-center justify-center shadow-[inset_0_0_10px_rgba(0,255,255,0.2)]">
+<span class="text-3xl md:text-4xl font-bold text-cyan-400 font-mono">08</span>
+</div>
+<span class="text-xs font-bold text-gray-400 uppercase mt-2">Hours</span>
+</div>
+<div class="text-pink-500 text-3xl font-bold self-start mt-2 md:mt-4">:</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-gray-900/50 border border-pink-500 rounded-lg flex items-center justify-center shadow-[inset_0_0_10px_rgba(255,0,255,0.2)]">
+<span class="text-3xl md:text-4xl font-bold text-pink-400 font-mono">33</span>
+</div>
+<span class="text-xs font-bold text-gray-400 uppercase mt-2">Minutes</span>
+</div>
+<div class="text-pink-500 text-3xl font-bold self-start mt-2 md:mt-4">:</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-gray-900/50 border border-pink-500 rounded-lg flex items-center justify-center shadow-[inset_0_0_10px_rgba(255,0,255,0.2)]">
+<span class="text-3xl md:text-4xl font-bold text-pink-400 font-mono">02</span>
+</div>
+<span class="text-xs font-bold text-gray-400 uppercase mt-2">Seconds</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Boxes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white border border-cyan-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-neon-cyan transition-shadow flex flex-col justify-between items-center h-full">
+<div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">JOIN COMMUNITY</h4>
+<p class="text-sm text-gray-600 mb-6">Join us iniwique bcam platform that and entathancy's TOM community.</p>
+</div>
+<a class="px-6 py-2 bg-slate-900 text-white text-sm font-bold rounded-full hover:bg-slate-800 shadow-neon-cyan transition-colors uppercase" href="#">Join Community</a>
+</div>
+<div class="bg-white border border-pink-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-neon-pink transition-shadow flex flex-col justify-between items-center h-full">
+<div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">APPLY AS CREATOR</h4>
+<p class="text-sm text-gray-600 mb-6">Create a oreatest core comsiela, and vell our community.</p>
+</div>
+<a class="px-6 py-2 bg-slate-900 text-white text-sm font-bold rounded-full hover:bg-slate-800 shadow-neon-pink transition-colors uppercase" href="#">Apply As Creator</a>
+</div>
+<div class="bg-white border border-primary rounded-2xl p-8 text-center shadow-lg hover:shadow-neon-primary transition-shadow flex flex-col justify-between items-center h-full">
+<div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">PARTNER WITH US</h4>
+<p class="text-sm text-gray-600 mb-6">We avalizble in wards to partners your us serooss.</p>
+</div>
+<a class="px-6 py-2 bg-primary text-gray-900 text-sm font-bold rounded-full hover:bg-[#b3e600] shadow-neon-primary transition-colors uppercase" href="#">Partner With Us</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TOM Awards & CTAs -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2 space-y-4">
+<a class="flex items-center gap-2 text-2xl font-extrabold tracking-tighter" href="#">
+<span class="text-gradient-pink">TOM</span>
+<span class="text-gray-900 text-lg uppercase tracking-widest mt-1">Thailand</span>
+</a>
+<p class="text-sm text-gray-500 max-w-sm">
+            TOM Thailand is a senerexa maan pop ensinsesse to serm mora shaping the TOM community, and erolice community and eanonous environ moms.
+          </p>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Explore</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-gray-600 hover:text-cyan-500 transition-colors" href="#">Home</a></li>
+<li><a class="text-sm text-gray-600 hover:text-cyan-500 transition-colors" href="#">Community</a></li>
+<li><a class="text-sm text-gray-600 hover:text-cyan-500 transition-colors" href="#">Contest</a></li>
+<li><a class="text-sm text-gray-600 hover:text-cyan-500 transition-colors" href="#">Events</a></li>
+<li><a class="text-sm text-gray-600 hover:text-cyan-500 transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Get Involved</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-gray-600 hover:text-pink-500 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-gray-600 hover:text-pink-500 transition-colors" href="#">Get Involved</a></li>
+<li><a class="text-sm text-gray-600 hover:text-pink-500 transition-colors" href="#">Temsani Community</a></li>
+<li><a class="text-sm text-gray-600 hover:text-pink-500 transition-colors" href="#">Partner With Us</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex gap-4">
+<!-- Social Icons Placeholder -->
+<a class="text-gray-400 hover:text-cyan-500" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-pink-500" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
