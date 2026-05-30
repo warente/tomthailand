@@ -23,7 +23,30 @@ const prompt = Prompt({
 
 export const metadata: Metadata = {
   title: "TOM Thailand — Thailand's Tom & Dee Lifestyle Community",
-  description: "ศูนย์กลาง Community ของทอม ดี้ และ Tom Lifestyle ในประเทศไทย",
+  description: "ศูนย์กลาง Community ของทอม ดี้ และ Tom Lifestyle ในประเทศไทย ที่รวม Creator, Events และการประกวดระดับประเทศไว้ในที่เดียว",
+  metadataBase: new URL("https://tomthailand.vercel.app"),
+  openGraph: {
+    title: "TOM Thailand — Thailand's Tom & Dee Lifestyle Community",
+    description: "ศูนย์กลาง Community ของทอม ดี้ และ Tom Lifestyle ในประเทศไทย",
+    url: "https://tomthailand.vercel.app",
+    siteName: "TOM Thailand",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TOM Thailand",
+      },
+    ],
+    locale: "th_TH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TOM Thailand — Thailand's Tom & Dee Lifestyle Community",
+    description: "ศูนย์กลาง Community ของทอม ดี้ และ Tom Lifestyle ในประเทศไทย",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
